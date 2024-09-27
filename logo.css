@@ -1,0 +1,202 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle at center, #ffa500 4%, #00b000 50%, #00b000 100%); 
+   overflow: hidden;
+   background-repeat: no-repeat;
+   background-size: cover; /* Ajusta o tamanho da imagem de fundo */
+}
+
+
+.logo {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    position: relative;
+    margin-top: -320px;
+}
+
+.logo img {
+    display: inline-block;
+}
+
+/* Ajustando tamanhos específicos de imagens */
+#agro {
+    display: flex;
+    width: 700px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-top: -260px;
+    transform: translateX(-50%);
+}
+
+.exotic-container {
+    position: relative;
+    display: inline-block;
+}
+
+#exotic {
+    display: flex;
+    width: 450px;
+    height: auto;
+    margin-top: 200px;
+}
+
+#slogan {
+    display: flex;
+    display: block;
+    margin-top: -370px;
+    margin-left: 70px;
+    width: 300px;
+    height: auto;
+   
+    
+
+}
+
+.pata {
+    display: none;
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    margin-top: 112px;
+    margin-right: -5px;
+    transform: translateY(-50%) rotate(46deg);
+   
+}
+
+#paw{
+    display: none;
+}
+
+.pegada {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-image: url('pegada.svg'); /* Caminho para a imagem da pegada */
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(285deg);
+    opacity: 0; 
+    animation: fade 1s ease-in-out forwards;
+   
+  
+}
+
+.container{
+    transform:translateY(-50%)  ;
+    transform: rotate(130deg);
+     animation: walk 4s forwards ease-in-out;
+    margin-left: -145px;
+}
+@keyframes walk {
+    0% {
+        bottom: 0; /* Inicia na parte inferior */
+    }
+    100% {
+        bottom: 200%; /* Move para cima, finaliza a 80% da altura do contêiner */
+    }
+}
+
+/* Animação das pegadas surgindo */
+@keyframes fade {
+    0% {
+        opacity: 0; /* Invisível no início */
+    }
+    20% {
+        opacity: 1; /* A pegada aparece */
+    }
+    70% {
+        opacity: 1; /* Mantém visível por mais tempo */
+    }
+    100% {
+        opacity: 0; /* Desaparece gradualmente ao final */
+    }
+}
+
+/* Contêiner externo: controla o voo */
+/* Contêiner externo: controla o voo */
+#beija {
+    display: flex;
+    width: 70px;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    margin-left: -85px;
+    margin-top: 152px; /* Ajuste inicial da posição vertical */
+    transform: translate(-50%, 50%);
+    animation: voar 10s ease-in-out forwards; /* Animação de voo */
+}
+
+/* Animação de voo com trajetória circular */
+@keyframes voar {
+    0% {
+        transform: translate(-450px, -10px); /* Começa da esquerda, subindo */
+    }
+    25% {
+        transform: translate(-100px, -10px); /* Move-se para cima à esquerda */
+    }
+    50% {
+        transform: translate(0px, -150px); /* Ponto mais alto, acima do logo */
+    }
+    75% {
+        transform: translate(300px, -50px)rotate(250deg) translate(-300px, -250px); /* Move-se para cima à direita */
+    }
+    90% {
+        transform: translate(-300px, 0px)rotate(300deg) translate(-100px, -100px); /* Move-se para cima à direita */
+    }
+    
+    100% {
+        transform:rotate(40deg) translate(0px, 0px); /* Pousa no logo, onde está 'exotic' */
+    }
+}
+
+.asa {
+    width: 100%;
+    height: 100%;
+    background-image: url('beija.svg'); /* Imagem do beija-flor */
+    background-size: cover;
+    transform-origin: center; /* Define o ponto de rotação no centro */
+}
+
+/* Animação de bater asas */
+@keyframes bater-asas {
+    0%, 100% {
+        transform: scale(1) rotate(0deg); /* Tamanho normal */
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg); /* Aumenta e rotaciona levemente */
+    }
+}
+
+/* Classe para ativar bater asas após voar */
+.bater-asas .asa {
+    animation: bater-asas 0.2s infinite; /* Adiciona animação de bater asas */
+}
+
+#text-element{
+    display: flex;
+    margin-top: -200px;
+    font-size: 25px;
+    margin-left: 80px;
+    font-weight:100;
+    font-family: "BukhariScript";
+
+}
+
+
+@font-face {
+    font-family: "BukhariScript"; /* Dê um nome à fonte */
+    src: url('BukhariScript.ttf') format('truetype'); /* Espaço substituído por %20 */
+    font-weight: normal; /* Ou bold, se for o caso */
+    font-style: normal; /* Ou italic, se for o caso */
+}
+
